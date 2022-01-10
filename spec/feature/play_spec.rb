@@ -23,6 +23,13 @@ feature 'play a game' do
 
   scenario 'game chooses an option' do
     click_button 'Rock'
-    expect(page).to have_content 'Computer chose Rock!'
+
+    message = 
+
+    expect(possible_messages).to include message
+  end
+
+  def possible_messages
+    [:rock, :paper, :scissors].map { |shape| "Computer chose #{option.to_s.capitalize}!" }
   end
 end
