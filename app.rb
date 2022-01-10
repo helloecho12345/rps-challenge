@@ -21,7 +21,7 @@ class RPS < Sinatra::Base
 
   post '/play' do
     session[:option] = params[:option]
-    session[:computer_option] = :rock
+    session[:computer_option] = Computer.new.option
     redirect '/play'
   end
 # start the server if ruby file executed directly
