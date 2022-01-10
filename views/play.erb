@@ -5,7 +5,9 @@ Hello <%= @name %>
   <input type="submit" name="option" value="Paper"/>
   <input type="submit" name="option" value="Scissors"/>
 
-<div id=>
+<div id="computer">
+  Computer chose <%= @computer_option.to_s.capitalize %>!
+</div>
 
 You chose <%= @option %>!
 Computer chose <%= @computer_option.to_s.capitalize %>!

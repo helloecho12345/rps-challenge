@@ -24,12 +24,12 @@ feature 'play a game' do
   scenario 'game chooses an option' do
     click_button 'Rock'
 
-    message = 
+    message = find(:css, "#computer").text
 
     expect(possible_messages).to include message
   end
 
   def possible_messages
-    [:rock, :paper, :scissors].map { |shape| "Computer chose #{option.to_s.capitalize}!" }
+    [:rock, :paper, :scissors].map { |option| "Computer chose #{option.to_s.capitalize}!" }
   end
 end
